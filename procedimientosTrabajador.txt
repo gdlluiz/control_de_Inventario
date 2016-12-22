@@ -1,0 +1,85 @@
+-- Mostrar
+
+create proc spmostrar_trabajador
+as 
+select top 100 * from trabajador
+order by apellidos asc
+go
+
+-- Buscar por apellido
+
+create proc spbuscar_trabajador_apellidos
+@textobuscar varchar(50)
+as 
+select * from trabajador
+where apellidos like @textobuscar + '%'
+order by apellidos asc
+go
+
+--  Buscar Num_Documento
+
+create proc spbuscar_trabajador_num_documento
+@textobuscar varchar(50)
+as 
+select * from trabajador
+where numeroDocumento like @textobuscar + '%'
+order by apellidos asc
+go
+
+
+-- Insertar 
+
+create proc spinsertar_trabajador
+
+@idtrabajador int output,
+@nombre varchar(20),
+@apellidos varchar(50),
+@sexo varchar(1),
+@fechanacimiento date,
+@numerodocumento varchar(13),
+@direccion varchar(100),
+@telefono varchar(10),
+@email varchar(50),
+@usuario varchar(20),
+@acceso varchar(20),
+@password varchar(20)
+as 
+insert into trabajador(nombre, apellidos, sexo, fechaNacimiento, numeroDocumento,
+     direccion, telefono, email, usuario, acceso, password)
+Values(@nombre, @apellidos ,@sexo, @fechanacimiento,
+     @numerodocumento,@direccion,@telefono,@email,@usuario,@acceso,@password)
+go
+
+
+
+
+-- editar
+create proc speditar_trabajador
+
+@idtrabajador int,
+@nombre varchar(20),
+@apellidos varchar(50),
+@sexo varchar(1),
+@fechanacimiento date,
+@numerodocumento varchar(13),
+@direccion varchar(100),
+@telefono varchar(10),
+@email varchar(50),
+@usuario varchar(20),
+@acceso varchar(20),
+@password varchar(20)
+as 
+update trabajador set nombre = @nombre, apellidos = @apellidos, sexo = @sexo, fechaNacimiento = @fechanacimiento, 
+numeroDocumento= @numerodocumento, direccion = @direccion, telefono = @telefono, email= @email, usuario= @usuario,
+acceso = @acceso, password = @password
+where idTrabajador = @idtrabajador
+go
+
+--Eliminar
+create proc speliminar_trabajador
+
+@idtrabajador int
+as
+delete from trabajador 
+where idTrabajador = @idtrabajador
+go

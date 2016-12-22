@@ -1,0 +1,125 @@
+
+
+
+--Agregar la columna estado a la tabla ingreso
+alter table ingreso
+add estado varchar(7) not null
+go
+
+
+--procedimient para mostrar los ingresos
+
+
+create proc spmostrar_ingreso
+as
+select  top 100 i.idIngreso, (t.apellidos+' '+ t.nombre) as Trabajador,
+p.razonSocial as Proveedor, i.fecha, i.tipoComprobante, i.serie,
+i.correlativo, i.estado, sum(d.precioCompra*d.stockInicial) as Total
+from detalleIngreso d inner join ingreso i 
+on d.idIngreso=i.idIngreso
+inner join proveedor p 
+on i.idProveedor=p.idProveedor
+inner join trabajador t
+on i.idTrabajador = t.idTrabajador
+group by
+i.idIngreso, (t.apellidos+' '+ t.nombre),
+p.razonSocial, i.fecha, i.tipoComprobante, i.serie,
+i.correlativo, i.estado
+order by i.idIngreso desc
+go
+
+--Mostrar Ingresos entre fechas
+
+create proc spbuscar_ingreso_fecha
+@textobuscar varchar(20),
+@textobuscar2 varchar(20)
+as
+select i.idIngreso, (t.apellidos+' '+ t.nombre) as Trabajador,
+p.razonSocial as Proveedor, i.fecha, i.tipoComprobante, i.serie,
+i.correlativo, i.estado, sum(d.precioCompra*d.stockInicial) as Total
+from detalleIngreso d inner join ingreso i 
+on d.idIngreso=i.idIngreso
+inner join proveedor p 
+on i.idProveedor=p.idProveedor
+inner join trabajador t
+on i.idTrabajador = t.idTrabajador
+group by
+i.idIngreso, (t.apellidos+' '+ t.nombre),
+p.razonSocial, i.fecha, i.tipoComprobante, i.serie,
+i.correlativo, i.estado
+having i.fecha >= @textobuscar and i.fecha <=@textobuscar2
+go
+
+
+--Insertar ingreso
+create proc spinsertar_ingreso
+@idingreso int = null output,
+@idtrabajador int,
+@idproveedor int,
+@fecha date,
+@tipocomprobante varchar(20),
+@serie varchar(4),
+@correlativo varchar(7),
+@iva decimal(4, 2),
+@estado varchar(7)
+as
+insert into ingreso(idTrabajador, idProveedor, fecha, tipoComprobante, serie,
+correlativo, iva, estado)
+values(@idtrabajador, @idproveedor, @fecha, @tipocomprobante, @serie,
+ @correlativo, @iva, @estado)
+
+--Obtener ese codigo autogenerado
+SET @idingreso = @IDENTITY
+go
+
+
+
+
+-- Procedimiento anular ingreso
+create proc spanular_ingreso
+@idingreso int
+as
+update ingreso set estado='ANULADO'
+where idIngreso = @idingreso
+go
+
+
+
+
+--procedimineto  para insertat los detalles de ingreso 
+
+
+create proc spinsertar_detalle_ingreso
+
+@iddetalleingreso int output,
+@idingreso int,
+@idarticulo int,
+@preciocompra money,
+@precioventa money,
+@stockinicial int, 
+@stockactual int, 
+@fechaproduccion date,
+@fechacaducidad date
+as
+insert into detalleIngreso(idIngreso, idArticulo, precioCompra, precioVenta,
+stockInicial, stockActual, fechaProduccion, fechaCaducidad) 
+values(@idingreso, @idarticulo, @preciocompra, @precioventa, @stockinicial,
+@stockactual, @fechaproduccion, @fechacaducidad)
+go
+ 
+
+
+
+
+--Mostrar Detalle de ingreso
+
+create proc spmostrar_detalle_ingreso
+@textobuscar int 
+as select d.idArticulo, a.nombre as Articulo, d.precioCompra,
+d.precioVenta, d.stockInicial, d.fechaProduccion, d.fechaCaducidad, 
+(d.stockInicial*d.precioCompra)as Subtotal
+from
+detalleIngreso d inner join articulo a 
+on d.idArticulo=a.idArticulo
+where d.idIngreso=@textobuscar
+go

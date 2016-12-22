@@ -1,0 +1,98 @@
+--Mostarar
+
+create proc spmostrar_proveedor
+as 
+select top 100 * from proveedor
+order by razonSocial asc
+go
+
+
+-- Buscar Razon_Social
+
+create proc spbuscar_proveedor_razon_social
+@textobuscar varchar(50)
+as
+select * from proveedor
+where 
+razonSocial like @textobuscar + '%'
+go
+
+
+-- Buscar num_documento
+
+create proc spbuscar_proveedor_num_documento
+@textobuscar varchar(13)
+as
+select * from proveedor
+where numDocumento  like @textobuscar + '%'
+go
+
+
+--insertar
+
+create proc spinsertar_proveedor
+
+@idproveedor int output,
+@razon_social varchar(150),
+@sector_comercial varchar(50),
+@tipodocumento varchar(20),
+@numdocumento varchar(13),
+@direccion varchar(100),
+@telefono varchar(10),
+@email varchar(50),
+@url varchar(100)
+as
+insert into proveedor(razonSocial, sectorComercial, tipoDocumento, numDocumento,direccion, telefono,email, url)
+VALUES(@razon_social,@sector_comercial,@tipodocumento,@numdocumento ,@direccion ,@telefono,@email,@url)
+go
+
+--editar
+
+create proc speditar_proveedor
+
+@idproveedor int,
+@razon_social varchar(150),
+@sector_comercial varchar(50),
+@tipodocumento varchar(20),
+@numdocumento varchar(13),
+@direccion varchar(100),
+@telefono varchar(10),
+@email varchar(50),
+@url varchar(100)
+as
+update proveedor set razonSocial = @razon_social, sectorComercial=@sector_comercial, tipoDocumento=@tipodocumento,numDocumento=@numdocumento,
+direccion=@direccion, telefono=@telefono,email=@email, url=@url
+where idProveedor = @idproveedor
+go
+
+--eliminar
+
+create proc speliminar_proveedor
+@idproveedor int 
+as delete from proveedor 
+where idProveedor = @idproveedor
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
