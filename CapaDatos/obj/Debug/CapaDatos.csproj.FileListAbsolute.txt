@@ -1,0 +1,6 @@
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaDatos\obj\Debug\CapaDatos.pdb
