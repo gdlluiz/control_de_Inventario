@@ -1,0 +1,7 @@
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\CapaNegocio\obj\Debug\CapaNegocio.pdb
