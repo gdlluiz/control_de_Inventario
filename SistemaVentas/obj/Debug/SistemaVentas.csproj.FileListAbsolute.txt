@@ -1,0 +1,14 @@
+c:\users\luiz\documents\visual studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\SistemaVentas.exe.config
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\SistemaVentas.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\SistemaVentas.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\CapaPresentacion.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\CapaNegocio.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\CapaDatos.dll
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\CapaPresentacion.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\CapaNegocio.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\bin\Debug\CapaDatos.pdb
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.csprojResolveAssemblyReference.cache
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.Properties.Resources.resources
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.csproj.GenerateResource.Cache
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.exe
+C:\Users\Luiz\Documents\Visual Studio 2015\Projects\SistemaVentas\SistemaVentas\obj\Debug\SistemaVentas.pdb
